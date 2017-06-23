@@ -1,0 +1,55 @@
+{
+  "name": "css-classify",
+  "version": "0.0.1",
+  "description": "a helper to generate class names for blocks, elements, and modifiers.",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src test tools",
+    "test": "mocha --compilers js:babel-register",
+    "build": "node tools/build",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennyhyun/npm-css-classify.git"
+  },
+  "author": "Kenny Kyunghyun Yeo <kenny@yeoyou.net>",
+  "license": "MIT",
+  "keywords": [],
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/kennyhyun/npm-css-classify/issues"
+  },
+  "homepage": "https://github.com/kennyhyun/npm-css-classify#readme",
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb-base"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.11.6"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-eslint": "7.2.3",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-latest": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.24.1",
+    "chai": "4.0.2",
+    "eslint": "4.0.0",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.5.0",
+    "mocha": "3.4.2",
+    "rollup": "0.43.0",
+    "rollup-plugin-babel": "2.7.1"
+  }
+}
