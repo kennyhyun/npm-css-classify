@@ -1,6 +1,6 @@
 {
   "name": "css-classify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a helper to generate class names for blocks, elements, and modifiers.",
   "main": "dist/index.js",
   "scripts": {

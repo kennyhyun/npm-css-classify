@@ -46,10 +46,22 @@ class Classify {
     }
     if (typeof modifiers === 'string') {
       return `${ element } ${ element }${ this.modifierDelimiter }${ modifiers }`;
-    } else if (typeof modifiers === 'object') {
+    } else if (Array.isArray(modifiers)) {
       const array = modifiers.map(m => {
         return `${ element }${ this.modifierDelimiter }${ m }`;
       });
+      return [ `${ element }` ].concat(array).join(' ');
+    } else if (typeof modifiers === 'object') {
+      const array = [];
+      for (let [key, val] of Object.entries(modifiers)) {
+        let judge = val;
+        if (typeof val === 'function') {
+          judge = val();
+        }
+        if (judge) {
+          array.push(`${ element }${ this.modifierDelimiter }${ key }`);
+        }
+      }
       return [ `${ element }` ].concat(array).join(' ');
     }
     return `${ element } ${ element }${ this.modifierDelimiter }`;
