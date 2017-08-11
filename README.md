@@ -1,5 +1,7 @@
 # npm-css-classify
 
+[![Build Status](https://travis-ci.org/kennyhyun/npm-css-classify.svg?branch=master)](https://travis-ci.org/kennyhyun/npm-css-classify)
+
 A helper to generate class names string.
 
 Inspired by react [classnames](https://github.com/JedWatson/classnames) and [react bem helper](https://github.com/marcohamersma/react-bem-helper).
@@ -14,8 +16,10 @@ CssClassify helps to write bem class names.
 ## some examples
 
 ```js
-const cls = new CssClassify({ block: 'card' });
+import { CssClassify, newBlock } from 'css-classify';
 
+const cls = new CssClassify({ block: 'card' });
+// or:      newBlock('card');
 console.log(cls.names());
 //          card
 console.log(cls.names('title'));

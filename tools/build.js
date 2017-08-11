@@ -9,13 +9,13 @@
 
 'use strict';
 
-const fs = require('fs');
-const del = require('del');
-const rollup = require('rollup');
-const babel = require('rollup-plugin-babel');
-const pkg = require('../package.json');
+var fs = require('fs');
+var del = require('del');
+var rollup = require('rollup');
+var babel = require('rollup-plugin-babel');
+var pkg = require('../package.json');
 
-let promise = Promise.resolve();
+var promise = Promise.resolve();
 
 // Clean up the output directory
 promise = promise.then(() => del(['dist/*']));

@@ -1,1 +1,4 @@
-export CssClassify from './CssClassify.js';
+import CssClassify from './CssClassify';
+export default CssClassify;
+export * from './CssClassify';
+

@@ -67,5 +67,8 @@ class Classify {
     return `${ element } ${ element }${ this.modifierDelimiter }`;
   }
 }
-
+export function newBlock(block) {
+  return new Classify({ block });
+}
+export const CssClassify = Classify;
 export default Classify;
