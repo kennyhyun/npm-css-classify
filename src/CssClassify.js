@@ -20,27 +20,27 @@ class Classify {
     });
   }
 
-  _getCombindElement(block = '', element = '') {
+  _getCombindElement(block, element) {
     let elem = '';
     if (block && element) {
       elem = `${ block }${ this.elementDelimiter }${ element }`;
     } else {
-      elem = `${ block }${ element }`;
+      elem = `${ block || '' }${ element || '' }`;
     }
     return elem;
   }
 
-  bem(block, element = '', modifiers = '') {
-    const elem = this._getCombindElement(block, element);
-    return this.names(elem, modifiers, '');
+  bem(block, element, modifiers) {
+    const elem = this._getCombindElement(block, element || '');
+    return this.names(elem, modifiers || '', '');
   }
 
-  names(_element, modifiers = '', _block) {
+  names(_element, modifiers, _block) {
     let block = this.block;
     if (typeof _block === 'string' || _block) {
       block = _block;
     }
-    const element = this._getCombindElement(block, _element);
+    const element = this._getCombindElement(block, _element || '');
     if (!modifiers) {
       return element;
     }
@@ -53,7 +53,7 @@ class Classify {
       return [ `${ element }` ].concat(array).join(' ');
     } else if (typeof modifiers === 'object') {
       const array = [];
-      for (let [key, val] of Object.entries(modifiers)) {
+      for (let [key, val] of Object.entries(modifiers || {})) {
         let judge = val;
         if (typeof val === 'function') {
           judge = val();

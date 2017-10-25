@@ -26,6 +26,8 @@ console.log(cls.names('title'));
 //          card__title
 console.log(cls.names('button', 'small'));
 //          card__button card__button--small
+console.log(cls.names(null, ['small', 'round']));
+//          card card--small card--round
 console.log(cls.names('button', ['small', 'round']));
 //          card__button card__button--small card__button--round
 console.log(cls.names('button', { small: true, active: typeof foobar === 'undifined' }));

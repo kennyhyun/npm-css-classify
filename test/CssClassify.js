@@ -83,12 +83,20 @@ describe('CssClassify', () => {
       expect(str).to.be.equal('card__title card__title--huge');
     });
     
-    it('[208] should return proper names for modifier object with a function', () => {
+    it('[209] should return proper names for modifier object with a function', () => {
       const classify = new CssClassify({ block: 'card' });
       const falsey = () => false; 
       const truthy = () => true; 
       const str = classify.names('title', { huge: true, active: truthy, ng: falsey });
       expect(str).to.be.equal('card__title card__title--huge card__title--active');
+    });
+
+    it('[210] should return proper names for null element with modifier', () => {
+      const classify = new CssClassify({ block: 'card' });
+      const falsey = () => false; 
+      const truthy = () => true; 
+      const str = classify.names(null, { huge: true, active: truthy, ng: falsey });
+      expect(str).to.be.equal('card card--huge card--active');
     });
   });
 });
